@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+
+  <!-- INTRO -->
+  <div class="intro-container" id="intro">
+    <div class="bg-text">Expense Tracker</div>
+    <img src="logo.png" class="logo" />
+  </div>
+
+  <!-- MAIN APP -->
+  <div id="mainApp" class="hidden">
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="brand">
+        <img src="logo.png" class="nav-logo" >
+        <span class="brand-name">Expense Tracker</span>
+
+      </div>
+
+      <div class="nav-actions">
+        <button id="navHome" class="nav-btn">Home</button>
+        <button id="navLogin" class="nav-btn">Login</button>
+        <button id="navLogout" class="nav-btn hidden">Logout</button>
+      </div>
+    </nav>
+
+    <!-- ================= HOME ================= -->
+    <section id="home" class="dashboard">
+
+  <div class="home-card center-box">
+    <h1>Manage Your Money Smartly</h1>
+
+    <p class="subtitle">
+      Track income, control expenses, and stay financially aware.
+    </p>
+
+    <div class="features">
+      <div class="feature">✔ Track Income & Expenses</div>
+      <div class="feature">✔ Auto Balance Calculation</div>
+      <div class="feature">✔ Data Stored Securely</div>
+    </div>
+
+    <button id="loginBtn" class="primary-btn">Login to Start</button>
+  </div>
+
+</section>
+
+
+    <!-- ================= LOGIN ================= -->
+    <section id="login" class="dashboard hidden">
+      <div class="card form-card">
+        <h2>Login</h2>
+
+        <!-- FIXED IDs -->
+        <input id="username" type="text" placeholder="Username" />
+        <input id="password" type="password" placeholder="Password" />
+
+        <p id="loginError" class="error-msg"></p>
+
+        <button id="doLogin" class="primary-btn">Login</button>
+      </div>
+    </section>
+
+    <!-- ================= DASHBOARD ================= -->
+    <section id="tracker" class="dashboard hidden">
+
+      <!-- BALANCE -->
+      <div class="balance-box">
+        <h3>Current Balance</h3>
+        <p class="balance-desc">
+          Income − Expenses
+        </p>
+        <h1>₹ <span id="balance">0</span></h1>
+      </div>
+
+      <!-- ACTION BUTTONS -->
+      <div class="action-bar">
+        <button id="openAdd" class="nav-btn">Add Transaction</button>
+        <button id="openHistory" class="nav-btn">View History</button>
+      </div>
+
+      <!-- ADD TRANSACTION -->
+      <div id="addSection" class="card hidden">
+        <h2>Add New Transaction</h2>
+        <form id="transactionForm">
+          <input id="name" type="text" placeholder="Transaction Name" />
+          <input id="amount" type="number" placeholder="Amount" />
+          <select id="type">
+            <option value="">Select Type</option>
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+          </select>
+          <p id="error" class="error-msg"></p>
+          <button class="primary-btn">Add Transaction</button>
+        </form>
+      </div>
+
+      <!-- TRANSACTION HISTORY -->
+      <div id="historySection" class="card hidden">
+        <h2>Transaction History</h2>
+        <ul id="transactionList"></ul>
+      </div>
+
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
